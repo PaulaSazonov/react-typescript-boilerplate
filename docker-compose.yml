@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  sample:
+    tty: true
+    container_name: react-typescript
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm start
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    ports:
+      - 3000:3000
